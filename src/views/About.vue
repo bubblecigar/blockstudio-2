@@ -2,29 +2,68 @@
   <div class="about">
     <h1>Works</h1>
     <div class="cards">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card v-for="(card, index) in cards" :key="index" />
     </div>
     <hr />
     <h5>
       Woden Public Realm Improvements Works Package
       <br />1 including Lift & Stairs.
     </h5>
-    <button>More</button>
+
+    <div class="load-hint">
+      <Loader v-show="isLoading" />
+      <button v-show="!isLoading" id="load-button" @click="load">More</button>
+    </div>
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
+import Loader from "@/components/Loader.vue";
 
 export default {
   name: "About",
   components: {
-    Card
+    Card,
+    Loader
+  },
+  data: function() {
+    return {
+      cards: 3,
+      isLoading: false,
+      timeoutId: null
+    };
+  },
+  methods: {
+    load: function() {
+      if (this.isLoading) {
+        // do nothing
+      } else {
+        this.isLoading = true;
+        this.timeoutId = setTimeout(() => {
+          this.cards += 3;
+          this.isLoading = false;
+        }, 500 + Math.random() * 1000);
+      }
+    }
+  },
+  mounted: function() {
+    const bottom = document.querySelector(".copyright");
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio >= 0.8) {
+          this.load();
+        }
+      });
+    };
+    const observer = new IntersectionObserver(callback, {
+      threshold: 0.2
+    });
+    observer.observe(bottom);
+  },
+  beforeUnmount: function() {
+    console.log("beforeUnmount");
+    clearTimeout(this.timeoutId);
   }
 };
 </script>
@@ -32,7 +71,15 @@ export default {
 <style lang='scss'>
 .about {
   text-align: center;
+  .load-hint {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: calc(2.5 * var(--gap-lg));
+  }
   button {
+    cursor: pointer;
     background: var(--light);
     color: var(--dark);
     padding: var(--gap-sm) var(--gap-md);
@@ -40,7 +87,6 @@ export default {
     outline: none;
     border: 1px solid var(--dark);
     width: 200px;
-    margin-bottom: calc(2.5 * var(--gap-lg));
   }
   h1 {
     padding: var(--gap-lg);

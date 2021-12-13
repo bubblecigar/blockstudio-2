@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="{isShowed}">
     <img src="https://picsum.photos/400/300" />
     <div class="description">
       <button class="card-award">Award</button>
@@ -18,11 +18,46 @@
 <script>
 export default {
   name: "Card",
-  props: {}
+  props: {},
+  data: function() {
+    return {
+      isShowed: false
+    };
+  },
+  mounted: function() {
+    setTimeout(() => {
+      this.isShowed = true;
+    }, 100);
+  }
 };
 </script>
 
 <style lang='scss'>
+@media (min-width: 1200px) {
+  .card:nth-child(3n + 2) {
+    transform: translateY(calc(0 * var(--gap-lg)));
+  }
+  .card:nth-child(3n + 2) {
+    transform: translateY(calc(1 * var(--gap-lg)));
+  }
+  .card:nth-child(3n + 3) {
+    transform: translateY(calc(2 * var(--gap-lg)));
+  }
+}
+@media (min-width: 1600px) {
+  .card:nth-child(4n + 1) {
+    transform: translateY(calc(0 * var(--gap-lg)));
+  }
+  .card:nth-child(4n + 2) {
+    transform: translateY(calc(1 * var(--gap-lg)));
+  }
+  .card:nth-child(4n + 3) {
+    transform: translateY(calc(2 * var(--gap-lg)));
+  }
+  .card:nth-child(4n + 4) {
+    transform: translateY(calc(3 * var(--gap-lg)));
+  }
+}
 .card {
   margin: var(--gap-md);
   width: 360px;
@@ -30,16 +65,20 @@ export default {
   border-radius: 3px;
   text-align: left;
   font-size: var(--font-size-md);
+  opacity: 0;
+  transition: opacity 1s linear;
+  overflow: hidden;
+
+  :last-child {
+    margin-right: auto;
+  }
+
+  &.isShowed {
+    opacity: 1;
+  }
 
   img {
     width: 100%;
-  }
-
-  &:nth-child(3n + 2) {
-    transform: translateY(var(--gap-lg));
-  }
-  &:nth-child(3n + 3) {
-    transform: translateY(calc(2 * var(--gap-lg)));
   }
 
   .card-award {
