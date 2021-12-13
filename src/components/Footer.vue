@@ -1,0 +1,86 @@
+<template>
+  <footer>
+    <div class="info">
+      <h3 class="logo">B</h3>
+      <div class="links">
+        <router-link to="/about">About</router-link>
+        <router-link to="/websites">Websites</router-link>
+        <router-link to="/branding">Branding</router-link>
+        <div class="contact">
+          T. 02-2885-8586
+          <br />E. info@blockstudio.tw
+          <br />3F., No.2, Ln. 80, Sec. 4, Chengde Rd., Shilin Dist., Taipei City 111, Taiwan
+        </div>
+      </div>
+      <div class="social-media">
+        <a>fb</a>
+        <a>ig</a>
+        <a>yt</a>
+      </div>
+    </div>
+    <div class="copyright">Block Studio©2018 Copyright. All Rights Reserved.</div>
+  </footer>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang='scss'>
+footer {
+  background: var(--dark);
+  color: var(--light);
+
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: space-between;
+
+  > div {
+    width: 100%;
+    padding: var(--gap-lg);
+  }
+
+  .info {
+    padding: var(--gap-lg) calc(3 * var(--gap-lg));
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+  }
+  .logo {
+    align-self: flex-start;
+  }
+  .links {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 calc(3 * var(--gap-lg));
+
+    a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: var(--font-size-lg);
+      font-weight: bold;
+      padding-right: calc(3 * var(--gap-lg));
+      padding-bottom: var(--gap-sm);
+    }
+  }
+  .contact {
+    text-align: left;
+    width: 100%;
+    line-height: 2;
+  }
+  .social-media {
+    margin-left: auto;
+
+    a {
+      padding-left: calc(2 * var(--gap-lg));
+    }
+  }
+  .copyright {
+    text-align: center;
+    padding: var(--gap-sm);
+    border-top: 1px solid var(--light);
+  }
+}
+</style>

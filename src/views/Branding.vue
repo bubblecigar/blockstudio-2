@@ -1,0 +1,218 @@
+<template>
+  <div class="branding">
+    <div class="award row">
+      <h2>Woden Public Realm Improvements Works Package 1 Including Lift & Stairs</h2>
+      <div />
+      <div class="award-grid">
+        <h4>Award</h4>
+        <span class="title">CLIENT</span>
+        <span class="title">STATUS</span>
+        <span>ACT Government</span>
+        <span>Completed 2017</span>
+        <span class="title">SUMMARY</span>
+        <span class="title">LOCATION</span>
+        <span>On time and on budget - 2017 MBA Award Winning Project</span>
+        <span>Woden Bus Interchange Bradely Street Phillip ACT 2606</span>
+      </div>
+    </div>
+    <div class="intro row">
+      <div class="description">
+        <h6>INTRO</h6>
+        <p>The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.</p>
+      </div>
+      <div />
+      <img src="https://picsum.photos/480/360" />
+    </div>
+    <div class="detail row">
+      <img src="https://picsum.photos/700/400" />
+      <p>The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.</p>
+      <div />
+    </div>
+    <div class="row">
+      <div class="video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/v87c-DQnblo"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <hr />
+    <h5>
+      Woden Public Realm Improvements Works Package
+      <br />1 including Lift & Stairs.
+    </h5>
+    <div class="buttons">
+      <button>Prev</button>
+      <button>Next</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang='scss'>
+.branding {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--gap-xl);
+  padding-bottom: 0;
+
+  > *:first-child {
+    flex-basis: 0;
+    flex-grow: 4;
+  }
+  > *:nth-child(2) {
+    flex-basis: 0;
+    flex-grow: 0.5;
+  }
+  > *:nth-child(3) {
+    flex-basis: 0;
+    flex-grow: 3;
+  }
+}
+.award {
+  background: var(--gray-1);
+  padding-bottom: var(--gap-xl);
+}
+.award-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  > * {
+    padding-bottom: var(--gap-sm);
+    padding-right: var(--gap-sm);
+  }
+  h4 {
+    grid-column: 1 / 3;
+  }
+  .title {
+    color: var(--gray-2);
+    margin-top: var(--gap-lg);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-top: 2px solid var(--dark);
+      width: 30px;
+      top: calc(-1.5 * var(--gap-sm));
+    }
+  }
+}
+.intro {
+  h6 {
+    color: var(--gray-2);
+    padding-bottom: var(--gap-md);
+  }
+  img {
+    height: auto;
+  }
+}
+.detail {
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: var(--gap-xl);
+
+  p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55%;
+    background: var(--light);
+    padding: var(--gap-lg);
+    padding-right: var(--gap-xl);
+    padding-top: var(--gap-xl);
+    padding-bottom: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-top: 2px solid var(--dark);
+      width: 30px;
+      top: calc(var(--gap-xl) - var(--gap-md));
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-top: 1px solid var(--dark);
+      width: 200px;
+      bottom: 0;
+      right: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+.video {
+  position: relative;
+  padding-top: 56.25%;
+  margin-bottom: var(--gap-xl);
+
+  iframe {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+}
+hr {
+  border-right: 1px solid var(--light);
+  height: 120px;
+  margin-top: var(--gap-lg);
+  width: 0;
+}
+.buttons {
+  margin-top: calc(2 * var(--gap-xl));
+  display: flex;
+  width: 100%;
+
+  button {
+    flex-grow: 1;
+    color: var(--light);
+    padding: var(--gap-lg);
+    font-size: var(--font-size-lg);
+    outline: none;
+    border: none;
+    width: auto;
+    border-top: 1px solid var(--gray-4);
+
+    &:first-child {
+      position: relative;
+      background: var(--light);
+      color: var(--gray-4);
+
+      &::after {
+        content: "↼";
+        position: absolute;
+        left: 30%;
+        transform: scale(1.5);
+      }
+    }
+    &:last-child {
+      position: relative;
+      background: var(--gray-4);
+      color: var(--light);
+
+      &::after {
+        content: "⇀";
+        position: absolute;
+        right: 30%;
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+</style>
