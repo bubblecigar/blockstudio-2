@@ -90,6 +90,7 @@ export default {
 .row {
   width: 100%;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   padding: var(--gap-xl);
   padding-bottom: 0;

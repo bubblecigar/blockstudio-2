@@ -22,7 +22,7 @@ header {
   position: absolute;
   display: flex;
   width: 100%;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
 

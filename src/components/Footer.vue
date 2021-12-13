@@ -50,7 +50,7 @@ footer {
   .info {
     padding: var(--gap-lg) calc(3 * var(--gap-lg));
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     align-items: flex-start;
   }
   .logo {
