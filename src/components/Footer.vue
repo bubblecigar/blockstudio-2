@@ -3,9 +3,9 @@
     <div class="info">
       <h3 class="logo">B</h3>
       <div class="links">
-        <router-link to="/about">About</router-link>
-        <router-link to="/websites">Websites</router-link>
-        <router-link to="/branding">Branding</router-link>
+        <router-link :to="{ path:'/about', hash:'#about' }">About</router-link>
+        <router-link :to="{ path:'/websites', hash:'#websites' }">Websites</router-link>
+        <router-link :to="{ path:'/branding', hash:'#branding' }">Branding</router-link>
         <div class="contact">
           T. 02-2885-8586
           <br />E. info@blockstudio.tw

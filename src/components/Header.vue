@@ -2,9 +2,9 @@
   <header>
     <div class="logo">B</div>
     <div class="links">
-      <router-link to="/about">About</router-link>
-      <router-link to="/websites">Websites</router-link>
-      <router-link to="/branding">Branding</router-link>
+      <router-link :to="{ path:'/about', hash:'#about' }">About</router-link>
+      <router-link :to="{ path:'/websites', hash:'#websites' }">Websites</router-link>
+      <router-link :to="{ path:'/branding', hash:'#branding' }">Branding</router-link>
     </div>
     <div class="menu">M</div>
   </header>

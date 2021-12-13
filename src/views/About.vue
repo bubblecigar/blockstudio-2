@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Works</h1>
+    <h1 id="about">Works</h1>
     <div class="cards">
       <Card v-for="(card, index) in cards" :key="index" />
     </div>

@@ -1,18 +1,10 @@
 <template>
-  <div class="Websites">
-    <SlideShowImage />
-  </div>
+  <div class="Websites" id="websites"></div>
 </template>
 
 <script>
-// @ is an alias to /src
-import SlideShowImage from "@/components/SlideShowImage.vue";
-
 export default {
-  name: "Websites",
-  components: {
-    SlideShowImage
-  }
+  name: "Websites"
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="branding">
-    <div class="award row">
+    <div id="branding" class="award row">
       <h2>Woden Public Realm Improvements Works Package 1 Including Lift & Stairs</h2>
       <div />
       <div class="award-grid">
