@@ -21,7 +21,7 @@
         <p>The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.</p>
       </div>
       <div />
-      <img src="https://picsum.photos/480/360" />
+      <SlideShowImage width="480px" height="360px" />
     </div>
     <div class="detail row">
       <img src="https://picsum.photos/700/400" />
@@ -60,7 +60,11 @@
 </template>
 
 <script>
+import SlideShowImage from "@/components/SlideShowImage.vue";
 export default {
+  components: {
+    SlideShowImage
+  },
   data: function() {
     return {
       showIframe: false
