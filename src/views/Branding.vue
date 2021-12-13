@@ -29,6 +29,21 @@
       <div />
     </div>
     <div class="row">
+      <div class="video-placeholder">
+        <img src="https://picsum.photos/960/580" />
+        <button @click="openYoutube" />
+      </div>
+    </div>
+    <hr />
+    <h5>
+      Woden Public Realm Improvements Works Package
+      <br />1 including Lift & Stairs.
+    </h5>
+    <div class="buttons">
+      <button>Prev</button>
+      <button>Next</button>
+    </div>
+    <div v-if="showIframe" class="overlay" @click="closeYoutube">
       <div class="video">
         <iframe
           width="560"
@@ -41,20 +56,25 @@
         ></iframe>
       </div>
     </div>
-    <hr />
-    <h5>
-      Woden Public Realm Improvements Works Package
-      <br />1 including Lift & Stairs.
-    </h5>
-    <div class="buttons">
-      <button>Prev</button>
-      <button>Next</button>
-    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data: function() {
+    return {
+      showIframe: false
+    };
+  },
+  methods: {
+    openYoutube: function() {
+      this.showIframe = true;
+    },
+    closeYoutube: function() {
+      this.showIframe = false;
+    }
+  }
+};
 </script>
 
 <style lang='scss'>
@@ -155,10 +175,70 @@ export default {};
     }
   }
 }
+.video-placeholder {
+  position: relative;
+  padding-bottom: 56%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 100%;
+  }
+
+  button {
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 88px;
+    height: 88px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background: var(--gray-3);
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform: translate(-40%, -50%);
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 30px solid var(--light);
+      border-right: 0px solid transparent;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+    }
+
+    &:hover {
+      background: var(--gray-1);
+      &::after {
+        border-left: 30px solid var(--gray-3);
+        border-right: 0px solid transparent;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+      }
+    }
+  }
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding: var(--gap-xl);
+  display: flex;
+}
 .video {
   position: relative;
+  width: 100%;
   padding-top: 56.25%;
-  margin-bottom: var(--gap-xl);
+  overflow: hidden;
 
   iframe {
     position: absolute;

@@ -62,7 +62,6 @@ export default {
     observer.observe(bottom);
   },
   beforeUnmount: function() {
-    console.log("beforeUnmount");
     clearTimeout(this.timeoutId);
   }
 };
