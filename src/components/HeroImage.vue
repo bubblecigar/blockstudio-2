@@ -99,6 +99,7 @@ export default {};
       }
       hr {
         border-right: 1px solid var(--light);
+        border-left: 0;
         height: 80px;
         margin-bottom: var(--gap-lg);
       }

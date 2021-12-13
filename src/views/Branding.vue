@@ -230,6 +230,7 @@ export default {
   }
 }
 .overlay {
+  z-index: 5;
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100vw;
@@ -242,7 +243,6 @@ export default {
 .video {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
   overflow: hidden;
 
   iframe {
@@ -255,6 +255,7 @@ export default {
 }
 hr {
   border-right: 1px solid var(--light);
+  border-left: 0;
   height: 120px;
   margin-top: var(--gap-lg);
   width: 0;

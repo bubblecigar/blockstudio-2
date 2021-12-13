@@ -96,6 +96,7 @@ export default {
   }
   hr {
     border-right: 1px solid var(--light);
+    border-left: 0;
     height: 120px;
     margin-top: var(--gap-lg);
     width: 0;
