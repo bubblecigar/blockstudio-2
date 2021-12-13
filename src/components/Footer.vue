@@ -13,9 +13,15 @@
         </div>
       </div>
       <div class="social-media">
-        <a>fb</a>
-        <a>ig</a>
-        <a>yt</a>
+        <a>
+          <unicon name="facebook-f" fill="white"></unicon>
+        </a>
+        <a>
+          <unicon name="instagram" fill="white"></unicon>
+        </a>
+        <a>
+          <unicon name="youtube" fill="white"></unicon>
+        </a>
       </div>
     </div>
     <div class="copyright">Block Studio©2018 Copyright. All Rights Reserved.</div>
@@ -49,6 +55,16 @@ footer {
   }
   .logo {
     align-self: flex-start;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 17px;
+      left: 3px;
+      top: -2px;
+      border-top: 3px solid var(--light);
+    }
   }
   .links {
     display: flex;
@@ -72,9 +88,10 @@ footer {
   }
   .social-media {
     margin-left: auto;
+    display: flex;
 
     a {
-      padding-left: calc(2 * var(--gap-lg));
+      padding-left: calc(1 * var(--gap-lg));
     }
   }
   .copyright {

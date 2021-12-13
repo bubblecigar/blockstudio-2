@@ -1,12 +1,14 @@
 <template>
   <header>
-    <div class="logo">B</div>
+    <h3 class="logo">B</h3>
     <div class="links">
       <router-link :to="{ path:'/about', hash:'#about' }">About</router-link>
       <router-link :to="{ path:'/websites', hash:'#websites' }">Websites</router-link>
       <router-link :to="{ path:'/branding', hash:'#branding' }">Branding</router-link>
     </div>
-    <div class="menu">M</div>
+    <div class="menu">
+      <unicon name="bars" fill="white"></unicon>
+    </div>
   </header>
 </template>
 <script>
@@ -25,7 +27,18 @@ header {
   align-items: center;
 
   .logo {
-    padding: var(--gap-lg);
+    position: relative;
+    padding: 0 var(--gap-lg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 17px;
+      left: 50%;
+      top: -2px;
+      transform: translate(-50%, -50%);
+      border-top: 3px solid var(--light);
+    }
   }
 
   .links {

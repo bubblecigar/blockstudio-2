@@ -72,6 +72,11 @@ h6 {
   // line-height: 24px;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 #app {
   font-family: Ubuntu, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

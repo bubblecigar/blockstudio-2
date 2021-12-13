@@ -7,9 +7,15 @@
     </main>
     <nav>
       <div class="links">
-        <a>fb</a>
-        <a>ig</a>
-        <a>yt</a>
+        <a>
+          <unicon name="facebook-f" fill="white"></unicon>
+        </a>
+        <a>
+          <unicon name="instagram" fill="white"></unicon>
+        </a>
+        <a>
+          <unicon name="youtube" fill="white"></unicon>
+        </a>
       </div>
       <div class="scroll-hint">
         <span>scroll</span>
