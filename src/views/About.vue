@@ -32,7 +32,8 @@ export default {
       cards: 3,
       isLoading: false,
       timeoutId: null,
-      remainScroll: 0
+      remainScroll: 0,
+      observer: null
     };
   },
   methods: {
@@ -66,13 +67,16 @@ export default {
         }
       });
     };
-    const observer = new IntersectionObserver(callback, {
+    this.observer = new IntersectionObserver(callback, {
       threshold: 0.2
     });
-    observer.observe(bottom);
+    this.observer.observe(bottom);
   },
   beforeUnmount: function() {
     clearTimeout(this.timeoutId);
+    const bottom = document.querySelector(".copyright");
+    this.observer.unobserve(bottom);
+    this.observer.disconnect();
   }
 };
 </script>
