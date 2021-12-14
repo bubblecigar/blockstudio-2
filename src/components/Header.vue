@@ -7,7 +7,7 @@
       <router-link :to="{ path:'/branding', hash:'#branding' }">Branding</router-link>
     </div>
     <div class="menu">
-      <unicon name="bars" fill="white"></unicon>
+      <unicon name="bars" fill="var(--light)"></unicon>
     </div>
   </header>
 </template>

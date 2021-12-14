@@ -14,13 +14,13 @@
       </div>
       <div class="social-media">
         <a>
-          <unicon name="facebook-f" fill="white"></unicon>
+          <unicon name="facebook-f" fill="var(--light)"></unicon>
         </a>
         <a>
-          <unicon name="instagram" fill="white"></unicon>
+          <unicon name="instagram" fill="var(--light)"></unicon>
         </a>
         <a>
-          <unicon name="youtube" fill="white"></unicon>
+          <unicon name="youtube" fill="var(--light)"></unicon>
         </a>
       </div>
     </div>
