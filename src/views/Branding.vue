@@ -153,14 +153,13 @@ export default {
 
   p {
     position: absolute;
-    bottom: 0;
+    bottom: calc(-1 * var(--gap-lg));
     right: 0;
     width: 55%;
     background: var(--light);
     padding: var(--gap-lg);
     padding-right: var(--gap-xl);
     padding-top: var(--gap-xl);
-    padding-bottom: 0;
 
     &::before {
       content: "";
@@ -230,7 +229,7 @@ export default {
   }
 }
 .overlay {
-  z-index: 5;
+  z-index: 15;
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100vw;
