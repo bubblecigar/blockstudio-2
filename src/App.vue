@@ -13,6 +13,7 @@ import Header from "@/components/Header.vue";
 import HeroImage from "@/components/HeroImage.vue";
 import Footer from "@/components/Footer.vue";
 import Snow from "@/components/Snow.vue";
+import { getTheme, setTheme } from "@/store.js";
 export default {
   components: {
     Snow,
@@ -22,8 +23,8 @@ export default {
   },
   data: function() {
     return {
-      darkColor: "#000000",
-      lightColor: "#ffffff"
+      darkColor: getTheme().dark,
+      lightColor: getTheme().light
     };
   },
   computed: {
@@ -40,6 +41,10 @@ export default {
     app.addEventListener("change-theme", e => {
       this.darkColor = e.detail.dark;
       this.lightColor = e.detail.light;
+      setTheme({
+        dark: this.darkColor,
+        light: this.lightColor
+      });
     });
   }
 };
