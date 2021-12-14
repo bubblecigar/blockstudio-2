@@ -1,7 +1,9 @@
 <template>
   <footer>
     <div class="info">
-      <h3 class="logo" @click="reload">B</h3>
+      <a href="https://github.com/bubblecigar/blockstudio-2">
+        <h3 class="logo" @click="reload">B</h3>
+      </a>
       <div class="links">
         <router-link :to="{ path:'/about', hash:'#about' }">About</router-link>
         <router-link :to="{ path:'/websites', hash:'#websites' }">Websites</router-link>
@@ -63,6 +65,7 @@ footer {
     cursor: pointer;
     align-self: flex-start;
     position: relative;
+    color: var(--light);
 
     &::before {
       content: "";

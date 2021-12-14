@@ -109,6 +109,10 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 #root {
   font-family: Ubuntu, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
