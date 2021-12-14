@@ -16,7 +16,10 @@
         :style="{ background: color}"
       ></button>
     </div>
-    <a target="_BLANK" href="https://codepen.io/alphardex/pen/dyPorwJ">Snow effects by alphardex</a>
+    <a target="_BLANK" href="https://codepen.io/alphardex/pen/dyPorwJ">
+      Snow effects by alphardex
+      <unicon name="external-link-alt" fill="var(--gray-3)"></unicon>
+    </a>
   </div>
 </template>
 
@@ -115,7 +118,14 @@ export default {
 
   a {
     color: var(--gray-4);
-    margin-left: 0.5em;
+    display: inline-flex;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--gray-3);
+
+    div {
+      margin-left: var(--gap-sm);
+      transform: translate(0, 3px);
+    }
   }
 }
 </style>
