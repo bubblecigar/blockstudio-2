@@ -112,7 +112,7 @@ export default {
     border-right: 1px solid var(--dark);
     border-left: 0;
     height: 120px;
-    margin-top: var(--gap-lg);
+    margin: var(--gap-xl) auto 0 auto;
     width: 0;
   }
 }
