@@ -102,6 +102,8 @@ export default {};
         border-left: 0;
         height: 80px;
         margin-bottom: var(--gap-lg);
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
