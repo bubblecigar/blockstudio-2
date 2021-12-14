@@ -31,7 +31,8 @@ export default {
     return {
       cards: 3,
       isLoading: false,
-      timeoutId: null
+      timeoutId: null,
+      remainScroll: 0
     };
   },
   methods: {
@@ -43,7 +44,16 @@ export default {
         this.timeoutId = setTimeout(() => {
           this.cards += 3;
           this.isLoading = false;
+          this.remainScroll = 20;
+          requestAnimationFrame(this.scrollAbove);
         }, 500 + Math.random() * 1000);
+      }
+    },
+    scrollAbove: function() {
+      if (this.remainScroll > 0) {
+        document.scrollingElement.scrollTop -= 40;
+        this.remainScroll--;
+        requestAnimationFrame(this.scrollAbove);
       }
     }
   },
@@ -95,7 +105,7 @@ export default {
     padding: var(--gap-md) 0;
   }
   hr {
-    border-right: 1px solid var(--light);
+    border-right: 1px solid var(--dark);
     border-left: 0;
     height: 120px;
     margin-top: var(--gap-lg);
