@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="info">
-      <h3 class="logo">B</h3>
+      <h3 class="logo" @click="reload">B</h3>
       <div class="links">
         <router-link :to="{ path:'/about', hash:'#about' }">About</router-link>
         <router-link :to="{ path:'/websites', hash:'#websites' }">Websites</router-link>
@@ -29,7 +29,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    reload: function() {
+      window.location.href = location.origin;
+    }
+  }
+};
 </script>
 
 <style lang='scss'>
@@ -54,6 +60,7 @@ footer {
     align-items: flex-start;
   }
   .logo {
+    cursor: pointer;
     align-self: flex-start;
     position: relative;
 

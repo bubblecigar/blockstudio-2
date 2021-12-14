@@ -1,6 +1,7 @@
 <template>
   <header>
-    <h3 class="logo">B</h3>
+    <h3 class="logo" @click="reload">B</h3>
+
     <div class="links">
       <router-link :to="{ path:'/about', hash:'#about' }">About</router-link>
       <router-link :to="{ path:'/websites', hash:'#websites' }">Websites</router-link>
@@ -12,7 +13,13 @@
   </header>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    reload: function() {
+      window.location.href = location.origin;
+    }
+  }
+};
 </script>
 <style lang="scss">
 header {
@@ -27,6 +34,7 @@ header {
   align-items: center;
 
   .logo {
+    cursor: pointer;
     position: relative;
     padding: 0 var(--gap-lg);
 
