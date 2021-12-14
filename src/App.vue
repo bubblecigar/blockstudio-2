@@ -1,9 +1,11 @@
 <template>
-  <Snow />
-  <Header />
-  <HeroImage />
-  <router-view />
-  <Footer />
+  <div id="root" :style="themeStyle">
+    <Snow />
+    <Header />
+    <HeroImage />
+    <router-view />
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -17,6 +19,28 @@ export default {
     Header,
     HeroImage,
     Footer
+  },
+  data: function() {
+    return {
+      darkColor: "#000000",
+      lightColor: "#ffffff"
+    };
+  },
+  computed: {
+    themeStyle: function() {
+      const themeStyle = {
+        "--dark": this.darkColor,
+        "--light": this.lightColor
+      };
+      return themeStyle;
+    }
+  },
+  mounted: function() {
+    const app = document.querySelector("#app");
+    app.addEventListener("change-theme", e => {
+      this.darkColor = e.detail.dark;
+      this.lightColor = e.detail.light;
+    });
   }
 };
 </script>
@@ -80,7 +104,7 @@ button {
   cursor: pointer;
 }
 
-#app {
+#root {
   font-family: Ubuntu, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
