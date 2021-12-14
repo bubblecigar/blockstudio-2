@@ -111,6 +111,31 @@ export default {
 .award {
   background: var(--gray-1);
   padding-bottom: var(--gap-xl);
+  position: relative;
+
+  h2 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background: var(--dark);
+      left: 0;
+      bottom: 0px;
+    }
+  }
+
+  &::before {
+    content: "B";
+    position: absolute;
+    font-size: 270px;
+    color: var(--gray-2);
+    opacity: 0.3;
+    left: 0;
+    font-weight: bold;
+    text-decoration: overline;
+  }
 }
 .award-grid {
   display: grid;
@@ -250,6 +275,22 @@ export default {
     width: 100%;
     height: 100%;
     left: 0;
+  }
+}
+h5 {
+  position: relative;
+  &::before {
+    content: "Block Studio";
+    position: absolute;
+    font-size: 200px;
+    width: 100vw;
+    text-align: center;
+    color: var(--gray-2);
+    opacity: 0.1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
   }
 }
 hr {
