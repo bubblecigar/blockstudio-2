@@ -253,10 +253,10 @@ export default {
   }
 }
 hr {
-  border-right: 1px solid var(--light);
+  border-right: 1px solid var(--dark);
   border-left: 0;
   height: 120px;
-  margin-top: var(--gap-lg);
+  margin: var(--gap-xl) 0 var(--gap-lg) 0;
   width: 0;
 }
 .buttons {
