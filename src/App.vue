@@ -118,6 +118,7 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--dark);
+  overflow: hidden;
 
   min-height: 100vh;
   display: flex;
