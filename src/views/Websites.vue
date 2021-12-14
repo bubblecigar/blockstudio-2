@@ -85,6 +85,10 @@ export default {
     left: 50%;
     top: 0;
     transform: translate(-50%, -100%);
+    background: var(--dark);
+    padding: var(--gap-sm) var(--gap-md);
+    border-radius: 30px;
+    border: 1px solid var(--dark);
   }
   .light-color-picker::before {
     content: "light color picker";
@@ -92,15 +96,14 @@ export default {
     left: 50%;
     top: 0;
     transform: translate(-50%, -100%);
+    background: var(--light);
+    color: var(--dark);
+    padding: var(--gap-sm) var(--gap-md);
+    border-radius: 30px;
+    border: 1px solid var(--dark);
   }
   width: 100%;
   min-height: 100vh;
-  background-image: radial-gradient(
-    circle at 50% 150%,
-    var(--light) 0%,
-    var(--dark) 80%,
-    transparent 100%
-  );
   background-attachment: fixed;
   color: var(--light);
   font-size: var(--font-size-lg);
@@ -111,7 +114,7 @@ export default {
   text-align: center;
 
   a {
-    color: var(--light);
+    color: var(--gray-4);
     margin-left: 0.5em;
   }
 }
