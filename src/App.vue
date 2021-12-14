@@ -1,4 +1,5 @@
 <template>
+  <Snow />
   <Header />
   <HeroImage />
   <router-view />
@@ -9,8 +10,10 @@
 import Header from "@/components/Header.vue";
 import HeroImage from "@/components/HeroImage.vue";
 import Footer from "@/components/Footer.vue";
+import Snow from "@/components/Snow.vue";
 export default {
   components: {
+    Snow,
     Header,
     HeroImage,
     Footer

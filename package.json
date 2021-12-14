@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "matter-js": "^0.17.1",
+    "poly-decomp": "^0.3.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vue-unicons": "^3.3.1"
