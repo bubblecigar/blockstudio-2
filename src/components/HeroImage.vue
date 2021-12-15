@@ -73,6 +73,7 @@ export default {};
   nav {
     margin-top: auto;
     width: 100%;
+    height: 0;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
